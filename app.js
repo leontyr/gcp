@@ -3,9 +3,9 @@ $(document).ready(function() {
 var engine = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.whitespace,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  prefetch: 'all',
+  prefetch: 'https://raw.githubusercontent.com/twitter/typeahead.js/gh-pages/data/countries.json',
   remote: {
-    url: 'all'
+    url: 'https://raw.githubusercontent.com/twitter/typeahead.js/gh-pages/data/countries.json'
   }
 });
 
