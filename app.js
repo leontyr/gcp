@@ -1,11 +1,13 @@
 $(document).ready(function () {
-  // constructs the suggestion engine
-  var engine = new Bloodhound({
+  var engine, remoteHost;
+  remoteHost = 'http://localhost:5000/api/values';
+  engine = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    prefetch: 'all.json',
+    // prefetch: 'all.json',
     remote: {
-      url: 'all.json'
+      url: remoteHost + '/%QUERY',
+      wildcard: '%QUERY'
     }
   });
 
